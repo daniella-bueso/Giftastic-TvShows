@@ -1,18 +1,35 @@
 h2{
 	text-align: center;
 	margin-bottom: 40px;
+	font-size: 40px;
 }
 
 .show {
 	margin: 10px;
 	display:inline!important;
+	border-radius: 8px;
+	font-size: 20px;
+}
+
+.show:active {
+  background-color: grey;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 .gifs {
 	float: left;
-	padding: 15px;
-	margin-top: 50px;
+	margin: 5px;
+}
+#gifs-area{
+	margin-top: 30px;
 }
 
 #add-tvshow {
 	margin-top: 5px;
+	border-radius: 8px;
+	font-size: 18px;
+}
+
+#new-tvshow {
+	font-size: 20px;
 }

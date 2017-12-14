@@ -25,6 +25,9 @@ $(document).ready(function() {
     }
   };
 
+  //Calling function so buttons display when page loads
+  displayButtons();
+
   //Function to display tvShows GIF in HTML
   function tvShowGif() {
 
@@ -32,6 +35,8 @@ $(document).ready(function() {
  
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
         show + "&api_key=o3Lwp7ZPXycTJnoxu5pxYD4uummH4itW&limit=10";
+
+        $("#gifs-area").empty();
       
       //Ajax call for specific gifs
       $.ajax({
@@ -44,7 +49,7 @@ $(document).ready(function() {
 
         for (var i = 0; i < results.length; i++) {
           
-          //Creates a div to hold show gifs
+          //Creates a div to hold tvshow gifs
           var gifDiv = $("<div class='gifs'>");
           
           //Storing the rating data in a variable
@@ -54,13 +59,32 @@ $(document).ready(function() {
           var displayRating = $("<p>").text("Rating: " + rating);
 
           //Creating element to hold gif image
-          var gifImage =$("<img>").attr("src", results[i].images.fixed_height_small_still.url);
-      
+          var gifImage =$("<img>");
+          gifImage.attr("src", results[i].images.fixed_height_still.url);
+          gifImage.attr("data-state", "still");
+          gifImage.attr("data-still", results[i].images.fixed_height_still.url);
+          gifImage.attr("data-animate", results[i].images.fixed_height.url);
+          gifImage.addClass("showgif");
+
           gifDiv.prepend(displayRating);
           gifDiv.prepend(gifImage);
 
           $("#gifs-area").prepend(gifDiv);
         }
+
+        //Function for gif image, so when it is clicked the state changes from still to animate
+        $('img').on('click', function(event) {
+        console.log(gifImage)
+        var state = $(this).attr("data-state");
+          if (state === "still"){
+            $(this).attr("src", $(this).data("animate"));
+            $(this).attr("data-state", "animate");
+          }
+          else{
+            $(this).attr("src", $(this).data("still"));
+            $(this).attr("data-state", "still");
+          } 
+        });
       });
   };
 
@@ -77,9 +101,7 @@ $(document).ready(function() {
     displayButtons();
   });
 
-  //On click event for show button to display gif
+  //On click event for tvshow button to display gif
   $(document).on("click", ".show", tvShowGif);
 
-//Calling function so buttons display when page loads
-  displayButtons();
 })
