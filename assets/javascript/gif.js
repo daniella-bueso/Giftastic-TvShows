@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
   // Array for tv shows
-  var tvShows = ["Game of Thrones", "Stranger Things", "Grey's Anatomy", "Friends", "The Flash"];
+  var tvShows = ["Game of Thrones", "Stranger Things", "Grey's Anatomy", "Friends", "The Flash", 
+  "That '70s Show", "Big Bang Theory", "House of Cards", "The Crown", "The Walking Dead", 
+  "The Daily Show with Trevor Noah", "Saturday Night Live"];
 
   //================================================================================================
   // FUNCTIONS //
@@ -87,6 +89,9 @@ $(document).ready(function() {
         });
       });
   };
+
+  //===================================================================================
+  // ON CLICK EVENTS
 
   //On click event for submit button
   $("#add-tvshow").on("click", function(event) {

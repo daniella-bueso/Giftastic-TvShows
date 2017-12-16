@@ -1,35 +1,68 @@
+/*Header*/
 h2{
 	text-align: center;
 	margin-bottom: 40px;
-	font-size: 40px;
+	font-size: 55px;
+	color: #201413;
+	font-family: 'Gloria Hallelujah', cursive;
+	text-shadow: 5px 5px 8px #c4b0a7;
 }
 
+/*Body*/
+body {
+	background-color: #f8e2c3;
+	border: 5px dotted #201413;
+}
+
+/*Buttons*/
 .show {
 	margin: 10px;
 	display:inline!important;
 	border-radius: 8px;
-	font-size: 20px;
+	font-size: 24px;
+	font-family: 'Lato', sans-serif;
+	background-color: #a88279;
+	border-color: #a88279;
+	color: #ffffff;
+	padding: 5px;
+	width: 200px;
 }
 
+/*Buttons- when clicked display another color and effect*/
 .show:active {
-  background-color: grey;
+  background-color: #c4b0a7;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+  border: none;
 }
+
+/*Gifs*/
 .gifs {
 	float: left;
 	margin: 5px;
+	font-family: 'Lato', sans-serif;
 }
+
+/*Gifs Area*/
 #gifs-area{
 	margin-top: 30px;
 }
 
+/*Submit Button*/
 #add-tvshow {
 	margin-top: 5px;
 	border-radius: 8px;
-	font-size: 18px;
+	font-size: 20px;
+	font-family: 'Lato', sans-serif;
+	background-color: #603935;
+	color: #ffffff;
+	width: 100px;
+	padding: 5px;
 }
 
+/*Form Header*/
 #new-tvshow {
-	font-size: 20px;
+	font-size: 24px;
+	font-family: 'Lato', sans-serif;
+	color: #201413;
 }
